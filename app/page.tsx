@@ -1,3 +1,14 @@
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
+import {
+  Code,
+  CreditCard,
+  Lock,
+  PiggyBank,
+  Terminal,
+  Verified,
+  Wallet,
+  Zap,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -44,19 +55,19 @@ export default function Home() {
               className="material-symbols-outlined text-slate-400 hover:text-[#14F195] transition-colors"
               data-icon="account_balance_wallet"
             >
-              account_balance_wallet
+              <Wallet />
             </button>
-            <button className="bg-[#14F195] text-on-primary-container px-6 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
-              Launch App
+            <button className="bg-[#14F195]  text-on-primary-container px-6 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
+              Get Started
             </button>
           </div>
         </nav>
       </header>
 
       {/* ----- Main content ----- */}
-      <main className="pt-20 font-body-md bg-background text-on-background">
+      <main className="pt-2 font-body-md bg-background text-on-background">
         {/* ---------- Hero Section ---------- */}
-        <section className="relative min-h-[921px] flex items-center justify-center overflow-hidden px-6">
+        <section className="relative min-h-[930px] flex items-center justify-center overflow-hidden px-6">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(20,241,149,0.05),transparent_70%)]"></div>
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -65,7 +76,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded-full border border-[#FFFFFF10]">
                 <span className="flex h-2 w-2 rounded-full bg-[#14F195]"></span>
                 <span className="text-label-mono font-label-mono text-[#14F195]">
-                  V2.0 LIVE ON MAINNET
+                  Live on Devnet
                 </span>
               </div>
 
@@ -81,12 +92,18 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="bg-[#14F195] text-on-primary-container px-8 py-4 rounded font-bold text-lg hover:shadow-[0_0_20px_rgba(20,241,149,0.3)] transition-all">
+                <a
+                  href=""
+                  className="bg-[#14F195] text-black px-8 py-4 rounded font-bold text-lg hover:shadow-[0_0_20px_rgba(20,241,149,0.3)] transition-all"
+                >
                   Get Started
-                </button>
-                <button className="border border-[#FFFFFF20] text-white px-8 py-4 rounded font-bold text-lg hover:bg-white/5 transition-all">
-                  View Documentation
-                </button>
+                </a>
+                <a
+                  href=""
+                  className="border border-[#FFFFFF20] text-white px-8 py-4 rounded font-bold text-lg hover:bg-white/5 transition-all"
+                >
+                  View Demo
+                </a>
               </div>
             </div>
 
@@ -101,7 +118,7 @@ export default function Home() {
                     <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/40"></div>
                   </div>
                   <span className="text-xs font-label-mono text-slate-500 ml-4">
-                    kuroscan --monitor
+                    kuroscan /reclaim
                   </span>
                 </div>
 
@@ -124,10 +141,10 @@ export default function Home() {
                     <span className="text-white">0.00612 SOL reclaimable</span>
                   </div>
                   <div className="flex gap-3">
-                    <span className="text-slate-600">[08:45:18]</span>
+                    <span className="text-slate-600">[08:45:19]</span>
                     <span className="text-[#14F195]">SUCCESS:</span>
                     <span className="text-white">
-                      Transaction finalized. TX: 4vC…9zP
+                      Transaction finalized. TX: 5zBk...FBdD
                     </span>
                   </div>
                   <div className="pt-4 mt-4 border-t border-[#FFFFFF05]">
@@ -146,7 +163,7 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-headline-lg font-headline-lg text-white">
+              <h2 className="text-headline-lg font-headline-lg text-4xl text-white">
                 Engineered for Efficiency
               </h2>
               <p className="text-body-lg font-body-lg text-slate-400">
@@ -157,14 +174,14 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Rent Reclamation */}
-              <div className="md:col-span-2 p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors">
+              <div className="cursor-pointer md:col-span-2 p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors">
                 <div className="flex justify-between items-start mb-12">
                   <div className="p-3 bg-[#14F195]/10 rounded-lg text-[#14F195]">
                     <span
                       className="material-symbols-outlined text-3xl"
                       data-icon="savings"
                     >
-                      savings
+                      <PiggyBank />
                     </span>
                   </div>
                 </div>
@@ -180,14 +197,14 @@ export default function Home() {
               </div>
 
               {/* Self‑Hosted */}
-              <div className="p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors flex flex-col justify-between">
+              <div className="cursor-pointer p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors flex flex-col justify-between">
                 <div>
                   <div className="p-3 bg-secondary/10 rounded-lg text-secondary mb-8 inline-block">
                     <span
                       className="material-symbols-outlined text-3xl"
                       data-icon="terminal"
                     >
-                      terminal
+                      <Terminal />
                     </span>
                   </div>
                   <h3 className="text-headline-md font-headline-md text-white mb-4">
@@ -202,13 +219,13 @@ export default function Home() {
               </div>
 
               {/* Sponsorship Recovery */}
-              <div className="p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors">
+              <div className="cursor-pointer p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors">
                 <div className="p-3 bg-tertiary-container/10 rounded-lg text-tertiary-container mb-8 inline-block">
                   <span
                     className="material-symbols-outlined text-3xl"
                     data-icon="verified_user"
                   >
-                    verified_user
+                    <Verified />
                   </span>
                 </div>
                 <h3 className="text-headline-md font-headline-md text-white mb-4">
@@ -222,7 +239,7 @@ export default function Home() {
               </div>
 
               {/* Instant Telegram Alerts */}
-              <div className="md:col-span-2 p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors flex items-center justify-between gap-8">
+              <div className="cursor-pointer md:col-span-2 p-8 bg-surface-container rounded-xl border border-[#FFFFFF10] hover:border-[#14F195]/30 transition-colors flex items-center justify-between gap-8">
                 <div className="flex-1">
                   <h3 className="text-headline-md font-headline-md text-white mb-4">
                     Instant Telegram Alerts
@@ -237,7 +254,7 @@ export default function Home() {
                   <img
                     alt="Telegram App UI Mockup"
                     className="w-full h-full object-cover grayscale"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHQWlS4kQ693sA-q58SEsbeii0txehxl_nsaEz9lzVvgsBkTn_m6Uy7c9nrjI4Er1HbSaozyNtZKXdQAJaW6F-q9WKRxjApLXzpNgreIkghl8RTGUxS2cED4uMyz95FGTJ3_t8q_JCllC0SNE3CX9HpsrS3xzsDa_2eGufDrRj7Y_c0wCu4hEEM8MEL483eweU0SXmVgCCWeiFBLRYbEfp_I5RYG1KOCrdc8v1zuSjCtxGbSfb0oFzWuJuqjw4yGJKGRPRVqDu7Q"
+                    src="/Logo.png"
                   />
                 </div>
               </div>
@@ -281,7 +298,7 @@ export default function Home() {
                   Connect Wallet
                 </h4>
                 <p className="text-body-md font-body-md text-slate-400">
-                  Provide your public key or securely link your burner wallet
+                  Provide your private key or securely link your burner wallet
                   for automated monitoring.
                 </p>
               </div>
@@ -318,7 +335,7 @@ export default function Home() {
                     className="material-symbols-outlined text-[#14F195]"
                     data-icon="security"
                   >
-                    security
+                    <Lock />
                   </span>
                   Is it safe to use my private key?
                 </h5>
@@ -337,7 +354,7 @@ export default function Home() {
                     className="material-symbols-outlined text-[#14F195]"
                     data-icon="payments"
                   >
-                    payments
+                    <CreditCard />
                   </span>
                   Are there any usage fees?
                 </h5>
@@ -355,7 +372,7 @@ export default function Home() {
                     className="material-symbols-outlined text-[#14F195]"
                     data-icon="developer_board"
                   >
-                    developer_board
+                    <CodeBracketIcon className="w-5 h-5" />
                   </span>
                   Which accounts can be reclaimed?
                 </h5>
@@ -371,13 +388,13 @@ export default function Home() {
 
         {/* ---------- Final CTA ---------- */}
         <section className="py-24 px-6 overflow-hidden">
-          <div className="max-w-5xl mx-auto bg-[#14F195] rounded-2xl p-12 relative">
+          <div className="max-w-5xl mx-auto bg-green-500 rounded-2xl p-12 relative">
             <div className="absolute top-0 right-0 p-8 opacity-20">
               <span
-                className="material-symbols-outlined text-[160px] text-on-primary-container"
+                className="material-symbols-outlined text-5x text-on-primary-container"
                 data-icon="bolt"
               >
-                bolt
+                <Zap />
               </span>
             </div>
 
@@ -395,7 +412,7 @@ export default function Home() {
                   className="material-symbols-outlined"
                   data-icon="arrow_forward"
                 >
-                  arrow_forward
+                  {/*<ArrowForwardIcon />*/}
                 </span>
               </button>
             </div>
@@ -418,7 +435,6 @@ export default function Home() {
               © 2024 Kuroscan. Built on Solana.
             </p>
           </div>
-
           <div className="flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
             <a
               className="text-slate-500 hover:text-[#14F195] transition-colors font-body-md"
